@@ -57,7 +57,8 @@ const Products = () => {
                         {val.book_name}
                       </h1>
                       <div className="flex">
-                        {dataEnroll.find((enro) => enro.bookId == val.id) ? (
+                        {localStorage.getItem("id") &&
+                        dataEnroll?.find((enro) => enro.bookId == val.id) ? (
                           <p className="text-xl text-white font-semibold bg-gray-600 w-max py-1 px-2 rounded-md">
                             🪙 {val.book_price}
                           </p>
@@ -107,12 +108,16 @@ const Products = () => {
                         {val.book_name}
                       </h1>
                       <div className="flex">
-                        <p className="text-xl text-white font-semibold bg-red-600 w-max py-1 px-2 rounded-md">
-                          🪙 {val.book_price}
-                        </p>
-                        {/* <p className="text-xl text-white font-semibold bg-gray-600 w-max py-1 px-2 rounded-md">
-                          🪙 {val.book_price}
-                        </p> */}
+                        {localStorage.getItem("id") &&
+                        dataEnroll?.find((enro) => enro.bookId == val.id) ? (
+                          <p className="text-xl text-white font-semibold bg-gray-600 w-max py-1 px-2 rounded-md">
+                            🪙 {val.book_price}
+                          </p>
+                        ) : (
+                          <p className="text-xl text-white font-semibold bg-red-600 w-max py-1 px-2 rounded-md">
+                            🪙 {val.book_price}
+                          </p>
+                        )}
                       </div>
                       {val.best_sell === "1" && (
                         <div className="absolute top-2 right-2 px-2 py-2 flex justify-center items-center rounded-xl bg-red-600">
