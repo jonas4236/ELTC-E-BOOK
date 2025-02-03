@@ -4,6 +4,7 @@ import { FaAddressCard, FaPhoneAlt } from "react-icons/fa"
 import { IoPersonCircle, IoLogOut } from "react-icons/io5"
 import { MdEmail } from "react-icons/md"
 import { BsGenderMale } from "react-icons/bs"
+import { Link } from "react-router"
 
 const Profile = () => {
   const Logout = () => {
@@ -62,6 +63,21 @@ const Profile = () => {
               <BsGenderMale className="size-4" />
               {localStorage.getItem("gender")}
             </button>
+          </MenuItem>
+          <MenuItem>
+            <Link to={"/products"} className="min-sm:hidden group flex w-full items-center gap-2 rounded-lg py-1.5 px-3 data-[focus]:bg-white/10">
+              รายการหนังสือ
+            </Link>
+          </MenuItem>
+          <MenuItem>
+            <Link to={"/reward"} className="min-sm:hidden group flex w-full items-center gap-2 rounded-lg py-1.5 px-3 data-[focus]:bg-white/10">
+              เช็คอิน
+            </Link>
+          </MenuItem>
+          <MenuItem>
+            <Link to={"/creator"} className="min-sm:hidden group flex w-full items-center gap-2 rounded-lg py-1.5 px-3 data-[focus]:bg-white/10">
+              ผู้จัดทำ
+            </Link>
           </MenuItem>
           <div className="my-1 h-px bg-white/5" />
           <MenuItem>

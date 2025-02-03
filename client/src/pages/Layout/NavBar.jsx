@@ -1,6 +1,7 @@
 import React from "react"
 import { Link } from "react-router"
 import Profile from "../Profile"
+import NavResponsive from "./NavResponsive"
 
 const NavBar = () => {
   return (
@@ -19,13 +20,13 @@ const NavBar = () => {
                 </li>
               </Link>
               <Link to={"/products"}>
-                <li className="ml-4 text-2xl text-slate-950 font-bold hover:text-white transition-all duration-150 cursor-pointer">
+                <li className="max-sm:hidden ml-4 text-2xl text-slate-950 font-bold hover:text-white transition-all duration-150 cursor-pointer">
                   รายการหนังสือ
                 </li>
               </Link>
               {localStorage.getItem("id") ? (
                 <Link to={"/reward"}>
-                  <li className="ml-4 text-2xl text-slate-950 font-bold hover:text-white transition-all duration-150 cursor-pointer">
+                  <li className="max-sm:hidden ml-4 text-2xl text-slate-950 font-bold hover:text-white transition-all duration-150 cursor-pointer">
                     เช็คอิน
                   </li>
                 </Link>
@@ -33,7 +34,7 @@ const NavBar = () => {
                 ""
               )}
               <Link to={"/creator"}>
-                <li className="ml-4 text-2xl text-slate-950 font-bold hover:text-white transition-all duration-150 cursor-pointer">
+                <li className="max-sm:hidden ml-4 text-2xl text-slate-950 font-bold hover:text-white transition-all duration-150 cursor-pointer">
                   ผู้จัดทำ
                 </li>
               </Link>
@@ -51,15 +52,16 @@ const NavBar = () => {
               ) : (
                 <>
                   <Link to={"/register"}>
-                    <li className="text-2xl text-white font-bold hover:text-white transition-all duration-150 cursor-pointer px-2 py-1 rounded-md bg-slate-950">
+                    <li className="text-2xl text-white font-bold hover:text-white transition-all duration-150 cursor-pointer px-2 py-1 rounded-md bg-slate-950 max-sm:hidden">
                       ลงทะเบียน
                     </li>
                   </Link>
                   <Link to={"/login"}>
-                    <li className="ml-4 text-2xl text-white font-bold hover:text-white transition-all duration-150 cursor-pointer px-2 py-1 rounded-md bg-slate-950">
+                    <li className="ml-4 text-2xl text-white font-bold hover:text-white transition-all duration-150 cursor-pointer px-2 py-1 rounded-md bg-slate-950 max-sm:hidden">
                       ล็อกอิน
                     </li>
                   </Link>
+                  <NavResponsive />
                 </>
               )}
             </ul>
