@@ -18,9 +18,13 @@ const Products = () => {
   }
 
   const fetchEnroll = async () => {
-    const { data } = await axios.get("http://localhost:3000/book/enrollall")
+    const { data } = await axios.post("http://localhost:3000/book/enrollall", {
+      userId: localStorage.getItem("id"),
+    })
     setDataEnroll(data)
   }
+
+  console.log(dataEnroll)
 
   useEffect(() => {
     fetchDataDevelop()

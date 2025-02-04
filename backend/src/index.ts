@@ -127,8 +127,9 @@ app.post("/book/purchase", async ({ body }) => {
   return data
 })
 
-app.get("/book/enrollall", async () => {
-  const data = await findAllEnroll()
+app.post("/book/enrollall", async ({ body }) => {
+  const { userId }: any = body
+  const data = await findAllEnroll(userId)
 
   return data
 })

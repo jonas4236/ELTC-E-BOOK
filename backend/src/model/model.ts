@@ -151,8 +151,10 @@ export const findEnroll = async (userId: number, bookId: number) => {
   return results
 }
 
-export const findAllEnroll = async () => {
-  const [results] = await (await db).execute("SELECT * FROM enroll")
+export const findAllEnroll = async (userId: number) => {
+  const [results] = await (
+    await db
+  ).execute("SELECT * FROM enroll WHERE userId = ?", [userId])
 
   return results
 }

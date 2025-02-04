@@ -104,7 +104,7 @@ const Product = () => {
                 >
                   โหลด E-Book
                 </Link>
-              ) : localStorage.getItem("id") ? (
+              ) : localStorage.getItem("id") && localStorage.getItem('coin') > Product[0]?.book_price ? (
                 <button
                   onClick={(e) => handleEnrolledBook(e)}
                   className="cursor-pointer px-4 py-2 rounded-md bg-red-600 text-white font-semibold border-2 border-transparent hover:text-red-600 hover:bg-transparent hover:border-red-600 transition-all duration-150"
